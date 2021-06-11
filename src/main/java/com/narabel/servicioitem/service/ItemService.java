@@ -1,4 +1,4 @@
-package com.narabel.servicioitem.models.service;
+package com.narabel.servicioitem.service;
 
 import java.util.List;
 

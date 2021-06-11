@@ -1,4 +1,4 @@
-package com.narabel.servicioitem.models.service;
+package com.narabel.servicioitem.service;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -16,17 +16,17 @@ import com.narabel.servicioitem.models.Producto;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
-@Service
+@Service("serviceRestTemplate")
 public class ItemServiceImpl implements ItemService {
 
-	private static final String URI_PRODUCTO = "http://localhost:8001/";
+	private static final String URI_PRODUCTO = "http://localhost:8001";
 
 	@Autowired
 	private RestTemplate clienteRest;
 
 	@Override
 	public List<Item> findAll() {
-		String uri = String.format("%s%s", URI_PRODUCTO, "listar");
+		String uri = String.format("%s%s", URI_PRODUCTO, "/listar");
 		log.info("URI list Item: {}", uri);
 
 		List<Producto> productos = Arrays.asList(
